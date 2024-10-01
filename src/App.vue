@@ -4,7 +4,10 @@
   <h6>{{ name }}</h6>
   <h5 v-bind:id="headingId">Heading</h5>
   <button v-bind:disabled="isDisabled">Button</button>
-  <h5 v-bind:class="[isDisabled ? 'Hello' :'' , isnotDisabled ? 'Helloh' :'']">Button</h5>
+  <h5 v-bind:class="{
+    'Hello':isDisabled,
+    'Helloh':isnotDisabled
+  }">Button</h5>
 </template>
 
 <script>
@@ -15,7 +18,7 @@ export default {
     return {
       name: "Muhammad Abdullah Rauf",
       headingId:"Heading Id",
-      isDisabled:true,
+      isDisabled:false,
       isnotDisabled:false,
     }
   },
