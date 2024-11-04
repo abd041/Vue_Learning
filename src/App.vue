@@ -1,30 +1,37 @@
 <template>
-  <h6>hello world</h6>
-  <HelloWorld msg="hello world" />
-  <h6>{{ name }}</h6>
-  <h5 v-bind:id="headingId">Heading</h5>
-  <button v-bind:disabled="isDisabled">Button</button>
-  <h5 v-bind:class="{
-    'Hello':isDisabled,
-    'Helloh':isnotDisabled
-  }">Button</h5>
+<h2 v-if="num === 0 ">The number is zero</h2>
+<h2 v-else>The number is not zero</h2>
+
+<div v-for="(name, index) in fullnames" :key="index">{{ name.name }}
+
+  <h4 v-for="(move , index) in name.movies" :key="index">
+          {{move }}
+  </h4>
+</div>
+
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+
 export default {
   name: "App",
   data() {
     return {
-      name: "Muhammad Abdullah Rauf",
-      headingId:"Heading Id",
-      isDisabled:false,
-      isnotDisabled:false,
+     num:1,
+     names:["name 1" , "name 2" , "name 3" , "name 4"],
+     fullnames :[{
+      name:"hello",
+      movies:["a1" , "a2" , "a3"]
+     },
+     {
+      name:"hello",
+      movies:["a1" , "a2" , "a3"]
+     }
+    
+    ]
     }
   },
-  components: {
-    HelloWorld,
-  }
 }
 </script>
 

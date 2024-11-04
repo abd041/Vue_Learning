@@ -9,7 +9,8 @@ export default {
   data() {
     return (
       {
-        channel: "<b>hello this is channel</b>"
+        channel: "<b>hello this is channel</b>",
+        lists:["name" , "name 1" , "name 2" , "name 3"]
       }
 
     )
