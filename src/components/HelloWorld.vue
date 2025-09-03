@@ -1,24 +1,44 @@
+<script setup>
+defineProps({
+  msg: {
+    type: String,
+    required: true,
+  },
+})
+</script>
+
 <template>
-  <h4>{{ msg }}</h4>
-  <div v-html="channel"></div>
+  <div class="greetings">
+    <h1 class="green">{{ msg }}</h1>
+    <h3>
+      You’ve successfully created a project with
+      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
+      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+    </h3>
+  </div>
 </template>
 
-<script>
-export default {
-  name: "HelloWorld",
-  data() {
-    return (
-      {
-        channel: "<b>hello this is channel</b>",
-        lists:["name" , "name 1" , "name 2" , "name 3"]
-      }
+<style scoped>
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  position: relative;
+  top: -10px;
+}
 
-    )
+h3 {
+  font-size: 1.2rem;
+}
 
-  },
-  props: {
-    msg: String,
+.greetings h1,
+.greetings h3 {
+  text-align: center;
+}
 
+@media (min-width: 1024px) {
+  .greetings h1,
+  .greetings h3 {
+    text-align: left;
   }
 }
-</script>
+</style>
